@@ -1,0 +1,124 @@
+:root {
+  --primary-bright-orange: hsl(31, 77%, 52%);
+  --primary-dark-cyan: hsl(184, 100%, 22%);
+  --primary-vdark-cyan: hsl(179, 100%, 13%);
+  --neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+  --neutral-light-gray: hsl(0, 0%, 95%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 5em 1em;
+  font-family: "Lexend Deca", sans-serif;
+  color: var(--neutral-light-gray);
+  font-size: 16px;
+}
+
+h2 {
+  font-family: "Big Shoulders Display", cursive;
+}
+
+.card {
+  padding: 2em;
+}
+
+.sedan-card {
+  background: var(--primary-bright-orange);
+}
+
+.sedan-card .button {
+  color: var(--primary-bright-orange);
+}
+
+.suv-card {
+  background: var(--primary-dark-cyan);
+}
+
+.suv-card .button {
+  color: var(--primary-dark-cyan);
+}
+
+.luxury-card {
+  background: var(--primary-vdark-cyan);
+}
+
+.luxury-card .button {
+  color: var(--primary-vdark-cyan);
+}
+
+.card-title {
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.card-description {
+  color: var(--neutral-transparent-white);
+  line-height: 25px;
+  margin-bottom: 4em;
+  font-size: 0.8em;
+}
+
+.button {
+  text-decoration: none;
+  background: var(--neutral-light-gray);
+  padding: 1em 2em;
+  width: max-content;
+  border-radius: 30px;
+}
+
+.info-container {
+  margin-bottom: 1em;
+}
+
+.sedan-card {
+  border-radius: 10px 10px 0 0;
+}
+
+.luxury-card {
+  border-radius: 0 0 10px 10px;
+}
+
+@media (min-width: 800px) {
+  body {
+    height: 100vh;
+    margin: 0 14em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    display: flex;
+  }
+
+  .info-container {
+    display: flex;
+    height: 65%;
+    /* making height of all info container equal */
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-description {
+    margin-bottom: 2em;
+    /* reducing margin bottom for the paragraph */
+  }
+
+  .button {
+    justify-self: flex-end;
+    /* making buttons appear at the bottom of each equal sized info containers */
+  }
+
+  .sedan-card {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .luxury-card {
+    border-radius: 0 10px 10px 0;
+  }
+}
