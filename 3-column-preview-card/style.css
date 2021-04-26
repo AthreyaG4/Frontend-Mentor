@@ -69,6 +69,14 @@ h2 {
   padding: 1em 2em;
   width: max-content;
   border-radius: 30px;
+  border: 2px solid var(--neutral-light-gray);
+  transition: all 200ms ease-in;
+}
+
+.button:hover,
+.button:focus {
+  background-color: transparent;
+  color: var(--neutral-light-gray);
 }
 
 .info-container {
