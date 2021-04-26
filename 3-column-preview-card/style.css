@@ -94,7 +94,7 @@ h2 {
 @media (min-width: 800px) {
   body {
     height: 100vh;
-    margin: 0 14em;
+    margin: 0 15em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,6 +102,10 @@ h2 {
 
   .container {
     display: flex;
+  }
+
+  .card {
+    padding: 2em 3em;
   }
 
   .info-container {
