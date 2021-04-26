@@ -22,14 +22,10 @@ img {
 }
 
 body {
-  height: 100vh;
   font-family: var(--font-family-1);
   background-color: var(--main-background);
   text-align: center;
   padding: 4rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .image-container {
@@ -91,7 +87,11 @@ main {
 
 @media (min-width: 900px) {
   body {
+    height: 100vh;
     padding: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   main {
@@ -101,7 +101,7 @@ main {
   }
 
   .image-container {
-    height: 400px;
+    height: auto;
     background: url(images/image-header-desktop.jpg);
     background-color: var(--accent-colour);
     background-position: top;
