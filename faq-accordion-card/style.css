@@ -1,0 +1,126 @@
+:root {
+  --primary-very-dark-saturated-blue: hsl(238, 29%, 16%);
+  --primary-soft-red: hsl(14, 88%, 65%);
+  --background-gradient-soft-violet: hsl(273, 75%, 66%);
+  --background-gradient-soft-blue: hsl(240, 73%, 65%);
+  --neutral-very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --neutral-dark-grayish-blue: hsl(240, 6%, 50%);
+  --divider-light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  padding: 5em 1em;
+  background: linear-gradient(
+    180deg,
+    var(--background-gradient-soft-violet) 50%,
+    var(--background-gradient-soft-blue) 100%
+  );
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-container {
+  height: 200px;
+  background: url("images/bg-pattern-mobile.svg"),
+    url("images/illustration-woman-online-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top 100px left 50%, top left 46%;
+  width: fit-content;
+  position: absolute;
+  top: -110px;
+  left: -12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  min-width: 297px;
+  width: 90%;
+  background-color: white;
+  border-radius: 30px;
+  margin-top: 7em;
+  padding: 5em 2em 2em 2em;
+}
+
+.faq {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+}
+
+.question-answer-block {
+  margin: 1em 0em;
+  width: 100%;
+  border-bottom: 1px solid var(--divider-light-grayish-blue);
+}
+
+.question {
+  margin-bottom: 1.5em;
+  position: relative;
+  transition: font-weight 500ms ease;
+}
+
+.question:hover {
+  color: var(--primary-soft-red);
+  cursor: pointer;
+}
+
+.question::after {
+  content: url("images/icon-arrow-down.svg");
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  right: 0;
+}
+
+.answer {
+  margin-bottom: 0em;
+  max-height: 0px;
+  opacity: 0;
+  transition: all 200ms ease;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ label .question {
+  font-weight: bold;
+}
+
+input[type="checkbox"]:checked ~ .answer {
+  max-height: 500px;
+  opacity: 1;
+  transition: all 400ms ease 300ms;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 900px) {
+  .img-container {
+    position: relative;
+    justify-self: flex-start;
+    background: url("images/illustration-woman-online-desktop.svg");
+  }
+  .faq {
+    margin-top: 0;
+  }
+
+  .container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+  }
+}
