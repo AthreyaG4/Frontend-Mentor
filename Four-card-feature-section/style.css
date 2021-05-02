@@ -1,0 +1,124 @@
+:root {
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+
+  --neutral-very-dark-blue: hsl(234, 12%, 34%);
+  --neutral-grayish-blue: hsl(229, 6%, 66%);
+  --neutral-very-light-gray: hsl(0, 0%, 98%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background-color: var(--neutral-very-light-gray);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+.container {
+  margin: 2em 1em;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-size: 1.5em;
+  color: var(--neutral-very-dark-blue);
+}
+
+.card-description {
+  font-size: 0.8em;
+  color: var(--neutral-grayish-blue);
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.page-header {
+  font-weight: 400;
+}
+
+.bold {
+  font-weight: 600;
+  display: block;
+}
+
+.page-description {
+  margin: 1em 0em 5em;
+  font-size: 0.9em;
+  color: var(--neutral-grayish-blue);
+}
+
+.card {
+  text-align: left;
+  background-color: white;
+  border-radius: 6px;
+  margin: 2em 0em;
+  padding: 1.5em;
+  height: 200px;
+  position: relative;
+  box-shadow: -10px 20px 25px -15px var(--neutral-grayish-blue);
+  cursor: pointer;
+}
+
+.supervisor {
+  border-top: 3px solid var(--primary-cyan);
+}
+
+.karma {
+  border-top: 3px solid var(--primary-orange);
+}
+
+.team-builder {
+  border-top: 3px solid var(--primary-red);
+}
+
+.calculator {
+  border-top: 3px solid var(--primary-blue);
+}
+
+.card-image {
+  position: absolute;
+  bottom: 1.5em;
+  right: 1.5em;
+}
+
+@media (min-width: 800px) {
+  .columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .page-description {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  .card {
+    width: 250px;
+  }
+}
