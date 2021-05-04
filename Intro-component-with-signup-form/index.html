@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
   
   <title>Frontend Mentor | Intro component with sign up form</title>
 </head>
@@ -24,11 +25,15 @@
     <div class="form-with-try-free">
       <p class="try-free"><span class="bold">Try it free 7 days</span> then $20/mo. thereafter</p>
       <div class="form-plus-tc">
-        <form action="">
-          <span class="error-span"><input type="text" placeholder="First Name"></input><p class="invisible">First Name cannot be empty</p></span>
-          <span class="error-span"><input type="text" placeholder="Last Name"></input><p class="invisible">Last Name cannot be empty</p></span>
-          <span class="error-span"><input type="text" placeholder="Email Address"></input><p class="invisible">Looks like this is not an email</p></span>
-          <span class="error-span"><input type="text" placeholder="Password"></input><p class="invisible">Password cannot be empty</p></span>
+        <form action="/">
+          <input type="text" placeholder="First Name"></input>
+          <p class="error-text invisible">First Name cannot be empty</p>
+          <input type="text" placeholder="Last Name"></input>
+          <p class="error-text invisible">Last Name cannot be empty</p>
+          <input type="text" placeholder="Email Address"></input>
+          <p class="error-text invisible">Looks like this is not an email</p>
+          <input type="password" placeholder="Password"></input>
+          <p class="error-text invisible">Password cannot be empty</p>
           <button class="btn" type="submit">Claim your free trial </button>
         </form>
         <p class="t-and-c">By clicking the button, you are agreeing to our <span class="red-color">Terms and Services</span></p>

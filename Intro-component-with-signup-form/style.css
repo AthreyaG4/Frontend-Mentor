@@ -100,30 +100,27 @@ input {
   cursor: pointer;
 }
 
-.btn:hover{
-  background-color:hsl(154, 59%, 70%);
+.btn:hover {
+  background-color: hsl(154, 59%, 70%);
 }
 
-.error-span{
-  color:var(--primary-red);
-  font-size:0.6em;
+.error-text {
+  color: var(--primary-red);
+  font-size: 0.6em;
   text-align: right;
-  position:relative;
+  position: relative;
 }
 
-.invisible{
-  display:none;
+.invisible {
+  display: none;
 }
 
-/* .error-span p{
-  display:none;
-} */
-
-.error-span::before{
-  content:url("images/icon-error.svg");
-  position:absolute;
-  z-index:3;
-  transform: translate(600%,12px);
+.error-text::before {
+  content: url("images/icon-error.svg");
+  position: absolute;
+  z-index: 3;
+  right: 1em;
+  top: -4.8em;
 }
 
 @media (min-width: 900px) {
@@ -135,12 +132,15 @@ input {
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
+    height: 100vh;
   }
   .container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2em;
+    margin-bottom: 0;
+    margin-top: 0;
   }
   .header {
     text-align: left;
