@@ -47,7 +47,6 @@ body {
 .image-container {
   width: 100%;
   height: 18em;
-  background-color: blue;
   background-image: url("images/hero-desktop.jpg");
   background-position: top left;
   background-repeat: no-repeat;
