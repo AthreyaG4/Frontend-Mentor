@@ -1,0 +1,177 @@
+:root {
+  --primary-cyan: hsl(179, 62%, 43%);
+  --primary-bright-yellow: hsl(71, 73%, 54%);
+  --neutral-light-gray: hsl(204, 43%, 93%);
+  --neutral-grayish-blue: hsl(218, 22%, 67%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2em;
+  font-family: "Karla", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--neutral-light-gray);
+}
+
+main {
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.white-box {
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.dark-blue {
+  background-color: var(--primary-cyan);
+}
+
+.light-blue {
+  background-color: hsl(179, 62%, 53%);
+  border-radius: 0 0 10px 10px;
+}
+
+.white-box,
+.dark-blue,
+.light-blue {
+  padding: 1.5em;
+}
+
+.bold {
+  font-weight: 400;
+}
+
+.bolder {
+  font-weight: 600;
+}
+
+.grey {
+  color: var(--neutral-grayish-blue);
+}
+
+.blue {
+  color: var(--primary-cyan);
+}
+
+.green {
+  color: var(--primary-bright-yellow);
+}
+
+.white {
+  color: white;
+}
+
+.btn {
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-bright-yellow);
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: hsl(71, 73%, 64%);
+}
+
+.big-size {
+  font-size: 28px;
+}
+
+.transparent {
+  opacity: 0.5;
+}
+
+.light-blue p {
+  margin-bottom: 0;
+}
+
+.light-blue h2 {
+  margin-top: 0;
+}
+
+.blue-box {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 800px) {
+  .blue-box {
+    flex-direction: row;
+  }
+
+  .blue-box > * {
+    width: 100%;
+  }
+
+  .light-blue {
+    border-radius: 0 0 10px 0;
+  }
+
+  .dark-blue {
+    border-radius: 0 0 0 10px;
+  }
+
+  .white-box,
+  .light-blue,
+  .dark-blue {
+    padding: 3em;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .dark-blue h2 {
+    margin-top: 0;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    max-width: 700px;
+  }
+}
