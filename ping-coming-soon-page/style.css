@@ -59,11 +59,14 @@ h1 {
 
 /* To make the width of the form 90% */
 form {
-  display: flex;
-  flex-direction: column;
   width: 100%;
   max-width: 25em;
   margin-bottom: 2em;
+}
+
+form .btn_inp-container{
+  display:flex;
+  flex-direction: column;
 }
 
 /* Text field styling */
@@ -107,6 +110,18 @@ form button:focus {
   outline: none;
 }
 
+form p {
+  margin-top:0;
+  font-size:12px;
+  color:var(--secondary-light-red);
+  font-weight: 300;
+  font-style:italic;
+}
+
+.error-desktop{
+  display:none;
+}
+
 /*------Styles for the image------*/
 .dashboard {
   max-width: 420px;
@@ -130,11 +145,15 @@ footer {
 }
 
 .social-links i {
-  cursor: pointer;
-  border-radius: 100%;
   width: 1em;
   height: 1em;
-  /* box-shadow: 0px 3px 15px rgba(121, 115, 115, 0.2); */
+
+}
+
+.link{
+  padding:0.5em;
+  border-radius: 100%;
+  box-shadow: 0px 3px 15px rgba(121, 115, 115, 0.2);
 }
 
 .icon {
@@ -151,12 +170,19 @@ footer {
   border: 1px solid var(--secondary-light-red);
 }
 
+.invisible{
+  display:none;
+}
+
 @media (min-width: 800px) {
-  form {
+
+  form{
+    max-width: 30em;
+  }
+  form .btn_inp-container{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    max-width: 35em;
   }
 
   form button {
@@ -179,5 +205,19 @@ footer {
   .logo-container img {
     font-size: 1.4em;
     margin-bottom: 0;
+  }
+
+  .error-mobile{
+    display:none;
+  }
+
+  .error-desktop{
+    display:block;
+    text-align: left;
+    margin-left:3em;
+  }
+
+  .invisible{
+    display:none;
   }
 }

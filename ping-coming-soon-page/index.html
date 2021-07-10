@@ -26,15 +26,19 @@
       <p>Subscribe and get notified</p>
     </div>
     <form action="index.html">
-      <input type="text" placeholder="Your Email address" aria-label="email">
-      <button type="submit" name="submit">Notify Me</button>
+      <div class="btn_inp-container">
+        <input type="text" placeholder="Your Email address" aria-label="email">
+        <p class="error-mobile invisible">Please provide a valid email address</p>
+        <button type="submit" name="submit">Notify Me</button>
+      </div>
+      <p class="error-desktop invisible">Please provide a valid email address</p>
     </form>
     <img class="dashboard" src="images/illustration-dashboard.png" alt="dashboard-image">
     <footer>
       <div class="social-links">
-        <i class="fab fa-facebook-f icon"></i>
-        <i class="fab fa-twitter icon"></i>
-        <i class="fab fa-instagram icon"></i>
+        <a class="link" href="#"><i class="fab fa-facebook-f icon"></i></a>
+        <a class="link" href=""><i class="fab fa-twitter icon"></i></a>
+        <a class="link" href=""><i class="fab fa-instagram icon"></i></a>
       </div>
       <p class="copyright">&copy; Copyright Ping. All rights reserved.</p>
     </footer>
