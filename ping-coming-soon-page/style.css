@@ -1,0 +1,183 @@
+:root {
+  --primary-blue: hsl(223, 87%, 63%);
+  --secondary-pale-blue: hsl(223, 100%, 88%);
+  --secondary-light-red: hsl(354, 100%, 66%);
+  --neutral-gray: hsl(0, 0%, 59%);
+  --neutral-vdark-blue: hsl(209, 33%, 12%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Franklin", sans-serif;
+  height: 100vh;
+}
+
+/* This is to make sure the the content is well spaced inside the main element */
+main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 2em 2em 1em;
+}
+
+/* This is to make image centered */
+img {
+  margin: 0 auto;
+}
+
+.logo-container img {
+  height: 1em;
+  margin-bottom: 2em;
+}
+
+/* Styles for texts */
+h1 {
+  font-weight: 300;
+  color: var(--neutral-gray);
+  font-size: 1.4em;
+}
+
+.information p {
+  font-size: 0.8em;
+}
+
+.bold {
+  font-weight: 700;
+  color: var(--neutral-vdark-blue);
+}
+
+/*--------Form styles-------*/
+
+/* To make the width of the form 90% */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 25em;
+  margin-bottom: 2em;
+}
+
+/* Text field styling */
+form input {
+  border-radius: 100px;
+  border: 1px solid var(--secondary-pale-blue);
+  height: 40px;
+  padding: 1em 2em;
+  margin: 1em;
+  position: relative;
+}
+
+/* Focus state */
+form input:focus {
+  border: 1px solid var(--primary-blue);
+  outline: none;
+}
+
+::placeholder {
+  color: var(--secondary-pale-blue);
+  opacity: 1;
+  position: relative;
+}
+
+/* Button styles */
+form button {
+  border-radius: 100px;
+  border: none;
+  height: 40px;
+  padding: 1em 2em;
+  background-color: var(--primary-blue);
+  color: white;
+  margin: 0 1em 1em;
+  cursor: pointer;
+  box-shadow: 0px 3px 15px rgba(121, 115, 115, 0.2);
+}
+
+form button:hover,
+form button:focus {
+  background-color: hsl(223, 87%, 73%);
+  outline: none;
+}
+
+/*------Styles for the image------*/
+.dashboard {
+  max-width: 420px;
+  width: 80%;
+  min-width: 300px;
+}
+
+/* -----Footer Styles-------- */
+
+/* To make it stick to the bottom */
+footer {
+  margin-top: auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+  gap: 2em;
+}
+
+.social-links i {
+  cursor: pointer;
+  border-radius: 100%;
+  width: 1em;
+  height: 1em;
+  /* box-shadow: 0px 3px 15px rgba(121, 115, 115, 0.2); */
+}
+
+.icon {
+  color: var(--primary-blue);
+}
+
+.copyright {
+  font-size: 0.7em;
+  color: var(--neutral-gray);
+  opacity: 0.7;
+}
+
+.red-border {
+  border: 1px solid var(--secondary-light-red);
+}
+
+@media (min-width: 800px) {
+  form {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 35em;
+  }
+
+  form button {
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  form input {
+    flex-grow: 2;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .information p {
+    font-size: 1em;
+  }
+
+  .logo-container img {
+    font-size: 1.4em;
+    margin-bottom: 0;
+  }
+}
