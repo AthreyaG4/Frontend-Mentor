@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"> 
+  <script src="script.js"></script>
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+
+  <main>
+    <img src="images/logo.svg" alt="logo">
+    <div class="container">
+      <div class="input-container">
+        
+        <div class="input">
+          <p class="bill-heading">Bill</p>
+          <input type="text" placeholder="0">
+        </div>
+
+        <div class="input">
+          <p class="tip-heading">Select Tip %</p>
+          <div class="btn-group">
+            <button class="btn" value="5">5%</button>
+            <button class="btn" value="10">10%</button>
+            <button class="btn" value="15">15%</button>
+            <button class="btn" value="25">25%</button>
+            <button class="btn" value="50">50%</button>
+            <input type="text" placeholder="Custom">
+          </div>
+        </div>
+
+        <div class="input">
+          <div class="input-heading">
+            <p class="number-of-people-heading">Number of People</p>
+            <p class="error invisible">Cant be zero</p>
+          </div>
+          <input type="text" placeholder="0">
+        </div>
+
+      </div>
+      
+      <div class="output-container">
+        <div class="displays">
+          <div class="display">
+            <p>Tip Amount <br><span class="dim">/ person</span></p>
+            <p class="price">0.00</p>
+          </div>
+          <div class="display">
+            <p>Total <br><span class="dim">/ person</span></p>
+            <p class="price">0.00</p>
+          </div>
+        </div>
+        <button class="reset reset-active">Reset</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
