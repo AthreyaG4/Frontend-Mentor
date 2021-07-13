@@ -83,6 +83,8 @@ img {
 
 .input-container .btn:focus {
   outline: none;
+  background-color: hsl(172, 67%, 75%);
+  color: var(--neutral-vdark-cyan);
 }
 
 .input-container .active {
