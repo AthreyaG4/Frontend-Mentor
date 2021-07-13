@@ -81,6 +81,10 @@ img {
   color: var(--neutral-vdark-cyan);
 }
 
+.input-container .btn:focus {
+  outline: none;
+}
+
 .input-container .active {
   background-color: var(--primary-strong-cyan);
   color: var(--neutral-vdark-cyan);
