@@ -1,0 +1,333 @@
+:root{
+    --primary-light-red:hsl(356, 100%, 66%);
+    --primary-vlight-red:hsl(355, 100%, 74%);
+    --primary-vdark-blue:hsl(208, 49%, 24%);
+
+    --neutral-white:hsl(0, 0%, 100%);
+    --neutral-grayish-blue:hsl(240, 2%, 79%);
+    --neutral-vdark-grayish-blue:hsl(207, 13%, 34%);
+    --neutral-vdark-black-blue:hsl(240, 10%, 16%);
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+/* For smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header background and border radius */
+header{
+    background-image:linear-gradient(90deg,hsl(13, 100%, 72%),hsl(353, 100%, 62%));
+    padding:3em 2em 7em;
+    margin-bottom:5em;
+    border-bottom-left-radius: 100px;
+    text-align: center;
+    font-family: 'Overpass', sans-serif;
+    color:white;
+}
+
+header ul{
+    list-style: none;
+    padding:0;
+}
+
+header a{
+    text-decoration: none;
+    color:var(--neutral-vdark-black-blue);
+}
+
+.page-heading{
+    font-size:2.7em;
+    margin-bottom:0;
+}
+
+/* NAVBAR STYLES */
+.navbar-container{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    position:relative;
+    margin-bottom:4em;
+}
+
+/* POSITION RELATIVE TO POSITION THE ARROW */
+.navbar-container>li>a{
+    color:white;
+    position:relative;
+}
+
+/* THE ARROW ELEMENT */
+.navbar-container>li>a::after{
+    position:absolute;
+    content:url("images/icon-arrow-light.svg");
+    right:-15px;
+    transition:transform 200ms ease;
+}
+
+/* LOGIN AND SIGN UP BUTTONS */
+.navbar-container .button-group{
+    display:flex;
+    margin-left:auto;
+}
+
+/* GENERAL MARGIN LEFT AND RIGHT FOR THE LIST ELEMENTS */
+.navbar-container>li{
+    margin:0 2em;
+}
+
+/* HOVER STATES */
+.navbar-container>li>a:hover,
+.navbar-container>li>a:focus{
+    text-decoration: underline;
+    outline:none;
+}
+
+/* HOVER STATES FOR THE ARROW */
+.navbar-container>li>a:hover::after,
+.navbar-container>li>a:focus::after{
+    transform:rotate(180deg);
+}
+
+.navbar-container>li:hover .dropdown,
+.navbar-container>li:focus .dropdown{
+    transition:transform 300ms ease 200ms;
+    transform:scale(1,1);
+}
+
+.dropdown{
+    position:absolute;
+    text-align: left;
+    background-color: white;
+    padding:1em 2em;
+    min-width:170px;
+    border-radius:10px;
+    transform:scale(1,0);
+    transform-origin: top;
+    transition:transform 300ms ease 0ms;
+}
+
+.dropdown li{
+    margin:1em 0;
+}
+
+.dropdown li:hover,
+.dropdown li:focus{
+    font-weight: 600;
+}
+
+/* THE MARGIN LEFT AND RIGHT FOR THE BUTTON GROUP */
+.navbar-container .button-group li{
+    margin:0 1em;
+}
+
+/* GENERAL STYLES FOR BOTH THE BUTTONS */
+.button{
+    padding:1em 3em;
+    border-radius: 100px;
+    border:none;
+    font-family:'ubuntu', sans-serif;
+    cursor: pointer;
+}
+
+/* BACKGROUNDS AND COLORS FOR BUTTONS WITH HOVERS */
+.signup-button{
+    color:var(--primary-vlight-red);
+    font-weight: 600;
+    background-color:white;
+    transition: background-color 200ms ease;
+}
+
+.signup-button:hover,
+.signup-button:focus{
+    background-color:inherit;
+    color:white;
+    outline:none;
+    border:1px solid white;
+}
+
+.login-button{
+    background-color:inherit;
+    color:white;
+    font-weight: 600;
+    transition: background-color 200ms ease;
+}
+
+.login-button:hover,
+.login-button:focus{
+    background-color: white;
+    color:var(--primary-vlight-red);
+    outline:none;
+}
+
+/* START FOR FREE AND LEARN MORE BUTTONS MARGINS AND STYLES WITH HOVERS */
+.button-group-2 .button{
+    margin:0 1em;
+}
+
+.start-for-free{
+    background-color: white;
+    color:var(--primary-vlight-red);
+    font-weight: 600;
+    transition:background-color 300ms ease;
+}
+
+.learn-more{
+    background-color:inherit;
+    color:white;
+    border:1px solid white;
+    font-weight: 600;
+    transition:background-color 300ms ease;
+}
+
+.start-for-free:hover,
+.start-for-free:focus{
+    background-color:inherit;
+    border:1px solid white;
+    color:white;
+    outline:none;
+}
+
+.learn-more:hover,
+.learn-more:focus{
+    background:white;
+    color:var(--primary-light-red);
+    outline:none;
+}
+
+/* ---------MAIN CONTENT STYLES--------- */
+
+/* CENTERING TEXT AND FOR FONT FAMILY */
+.main-content{
+    text-align: center;
+    font-family: 'Overpass', sans-serif;
+}
+
+/* FONT WEIGHT AND PADDING FOR PARTICULAR HEADINGS AND FOR PARAGRAPHS */
+.main-content h2,.main-content h3{
+    color: var(--primary-vdark-blue);
+    font-weight: 600;
+    font-size:1.5em;
+    padding:0 2em;    
+}
+
+.main-content p{
+    color:var(--neutral-vdark-grayish-blue);
+    font-size: 1.1em;
+    line-height: 35px;
+    padding:0 2em;
+}
+
+/* SETTING UP THE FLOATING IMAGE */
+.floating-image{
+    position:absolute;
+    top:-13em;
+    left:0;
+    right:0;
+    width:100%;
+    margin:0 auto;
+    max-width: 360px;
+}
+
+/* BLUE SECTION STYLES */
+.main-content .blue-section{
+    background-color: #3a3d5c;
+    color:white;
+    position: relative;
+    margin-top:18em;
+    margin-bottom:4em;
+    border-top-right-radius: 100px;
+    border-bottom-left-radius: 100px;
+    padding:8em 0;
+    background-image: url("images/bg-pattern-circles.svg");
+    background-position: top -200px center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+.blue-section h3{
+    color:white;
+}
+
+.blue-section p{
+    color:white;    
+}
+
+.last-section{
+    margin-bottom:5em;
+}
+
+.desktop{
+    display:none;
+} 
+/* ---------FOOTER STYLES----------- */
+
+footer{
+    color:var(--neutral-grayish-blue);
+    background-color:var(--neutral-vdark-black-blue);
+    border-top-right-radius: 100px;
+    padding:5em;
+    font-family: 'Overpass', sans-serif;
+    font-size:1.2em;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+footer img{
+    margin-bottom: 4em;
+}
+
+footer ul{
+    list-style: none;
+    padding:0;
+    margin:0;
+}
+
+footer h3{
+    font-weight: 600;
+    color:white;
+}
+
+footer a{
+    text-decoration: none;
+    color:var(--neutral-grayish-blue);
+    font-weight: 300;
+}
+
+footer>ul>li{
+    margin-bottom: 2em;
+}
+
+footer a>li{
+    margin-bottom:0.5em;
+    width: max-content;
+    margin-right:0;
+}
+
+footer a:hover,
+footer a:focus{
+    text-decoration: underline;
+    outline:none;
+}
+
+@media (min-width:1000px){
+    .desktop{
+        display:flex;
+    }
+}
