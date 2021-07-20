@@ -1,0 +1,154 @@
+:root{
+    --primary-moderate-violet:hsl(263, 55%, 52%);
+    --primary-vdark-grayish-blue:hsl(217, 19%, 35%);
+    --primary-vdark-black-blue:hsl(219, 29%, 14%);
+    --primary-white:hsl(0, 0%, 100%);
+
+    --neutral-light-gray:hsl(0, 0%, 81%);
+    --neutral-light-grayish-blue:hsl(210, 46%, 95%);
+    
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+img{
+    border-radius: 100%;
+}
+
+body{
+    padding:2em;
+    margin:0;
+    background-color: var(--neutral-light-grayish-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    background-color: var(--neutral-light-grayish-blue);
+    display:grid;
+    grid-template-columns:auto;
+    align-items: center;
+    justify-content: center;
+    grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    ;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.card{
+    border-radius: 10px;
+    padding:2em;
+    margin:0;
+    min-width:200px;
+    height: 100%;
+}
+
+.purple{
+    background-color: var(--primary-moderate-violet);
+    color:white;
+}
+
+.dark-black-blue{
+    background-color: var(--primary-vdark-black-blue);
+    color:white;
+}
+
+.bluish-gray{
+    background-color: var(--primary-vdark-grayish-blue);
+    color:white;
+}
+
+.white{
+    background-color: var(--primary-white);
+    color:var(--primary-vdark-black-blue);
+}
+
+.person-details{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.person-description{
+    margin-left:1em;
+}
+
+.person-name{
+    margin:0;
+    font-size:0.8em;
+}
+
+.person-designation{
+    margin:0;
+    font-size:0.8em;
+    opacity:0.5;
+}
+
+.testimonial{
+    opacity:0.7;
+}
+
+.card1{
+    grid-area: card1;
+    background-image: url("images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top 2em right 5em;
+}
+
+.card2{
+    grid-area: card2;
+}
+
+.card3{
+    grid-area: card3;
+}
+
+.card4{
+    grid-area: card4;
+}
+
+.card5{
+    grid-area: card5;
+}
+
+@media (min-width:700px){
+    main{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max-content max-content max-content;
+        grid-template-areas: 
+        "card1 card1"
+        "card2 card3"
+        "card4 card4"
+        "card5 card5";
+    }
+}
+
+@media (min-width:900px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: max-content max-content max-content;
+        grid-template-areas: 
+        "card1 card1 card3"
+        "card2 card4 card4"
+        "card5 card5 card5";
+    }
+}
+
+@media (min-width:1200px) {
+    main{
+        grid-template-columns: 1fr 1fr 1fr 0.9fr;
+        grid-template-rows: max-content max-content;
+        grid-template-areas: 
+        "card1 card1 card2 card5"
+        "card3 card4 card4 card5";
+    }
+}
