@@ -1,0 +1,182 @@
+:root{
+    font-family: 'Raleway', sans-serif;
+    --neutral-pale-blue:hsl(243, 100%, 93%);
+    --neutral-grayish-blue:hsl(229, 7%, 55%);
+    --neutral-dark-blue:hsl(228, 56%, 26%);
+    --neutral-vdark-blue:hsl(229, 57%, 11%);
+    font-size:14px;
+}
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background-image:url("images/bg-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    min-height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    width:100%;
+    max-width: 500px;
+}
+
+.card{
+    background-color:var(--neutral-dark-blue);
+    margin:2em;
+    border-radius:10px;
+    padding:2em;
+    color:var(--neutral-pale-blue);
+}
+
+/* ----------CARD 1--------- */
+.icon-card{
+    padding:3em;
+    border-top-right-radius: 100px;
+}
+
+.logo{
+    margin:1em 0 2em;
+}
+
+.icons-container{
+    display:flex;
+    gap:2em;
+}
+
+.icon{
+    background-color:var(--neutral-vdark-blue);
+    padding:1em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.icon:hover,
+.icon:focus{
+    background-color:hsl(229, 57%, 21%);
+}
+
+/* -----------CARD 2-------------- */
+
+
+/* FLOATING BOX */
+.floating-box{
+    /* FOR POSITION */
+    position:absolute;
+    bottom:-20%;
+    left:50%;
+    transform:translateX(-50%);
+
+    /* FONT SIZE COLOR AND PADDINGS */
+    font-size:1em;
+    background-color:white;
+    padding:1rem;
+    color:var(--neutral-grayish-blue);
+
+    /* WIDTH AND MAX WIDTH */
+    width:50%;
+    max-width:200px;
+
+    border-radius: 20px;
+
+    /* TO ALIGN THE TEXTS */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:0.5em;
+}
+
+.big-text{
+    font-size:2.5em;
+    color:black;
+    font-weight:600;
+}
+
+/* THE BAR ITSELF.GIVING IT A WIDTH AND A HEIGHT AND ROUNDING EDGES */
+.bar{
+    height:20px;
+    width:100%;
+    background-color:hsl(228, 56%, 18%);
+    border-radius: 10px;
+    margin:1em 0 0.5em;
+}
+
+/* THE TEXT UNDER THE BOX GIVING IS A DISPLAY FLEX */
+.bar-info{
+    display:flex;
+    justify-content: space-between;
+}
+
+/* FOR THE BOLD TEXT */
+.bold-text{
+    font-weight:600;
+}
+
+/* CENTERING THE INFO ABOVE THE BAR */
+.data-info{
+    text-align:center;
+}
+
+.data-card{
+    position:relative;
+    padding-bottom:4em;
+}
+
+@media (min-width:750px) {
+    main{
+        display:flex;
+        max-width: none;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .card{
+        width:100%;
+    }
+
+    .icon-card{
+        max-width: 400px;
+    }
+
+    .data-card{
+        max-width: 500px;
+    }
+
+    .data-info{
+        text-align: left;
+    }
+
+    .data-card{
+        padding:3em;
+    }
+
+    .floating-box{
+        top:-4em;
+        bottom:auto;
+        left:auto;
+        right:0;
+        transform:translateX(-20%);
+        clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 100% 75%, 100% 100%, 91% 76%, 0% 75%);
+        border-radius: 0%;
+        padding-bottom:3em;
+        border-radius: 10px 10px 0 10px;
+    }
+
+    /* .floating-box::after{
+        position: absolute;
+        content:'';
+        top:5em;
+        height:2em;
+        width:100%;
+        border-top-left-radius: 10px;
+        clip-path: polygon(0 0, 85% 0, 100% 100%, 0% 100%);
+        background-color: var(--neutral-dark-blue);
+    } */
+}
