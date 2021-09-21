@@ -138,6 +138,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 /* TO MAKE THE ICON AND USERNAME BACK TO BACK */
@@ -239,6 +240,7 @@ main {
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  cursor: pointer;
 }
 
 .bottom-part .card .card-icon {
@@ -263,6 +265,14 @@ main {
 .card-key {
   color: var(--text-color);
   font-weight: 600;
+}
+
+.light .card:hover {
+  background-color: hsl(227, 47%, 90%);
+}
+
+.dark .card:hover {
+  background-color: hsl(228, 28%, 30%);
 }
 
 @media (min-width: 600px) {
