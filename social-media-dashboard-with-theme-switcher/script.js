@@ -6,13 +6,9 @@ toggle_button.addEventListener("click",(e)=>{
     toggle_button_ball.classList.toggle("right");
 
     if(main.classList.contains("dark")){
-        main.classList.remove("dark");
-        main.classList.add("light");
-        console.log(main.classList);
+        main.classList.replace("dark","light");
     }
     else{
-        main.classList.remove("light");
-        main.classList.add("dark");
-        console.log(main.classList);
+        main.classList.replace("light","dark");
     }
 });
