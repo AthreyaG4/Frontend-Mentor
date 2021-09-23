@@ -1,0 +1,209 @@
+:root {
+  --primary-blue: hsl(246, 80%, 60%);
+  --primary-work: hsl(15, 100%, 70%);
+  --primary-play: hsl(195, 74%, 62%);
+  --primary-study: hsl(348, 100%, 68%);
+  --primary-excercise: hsl(145, 58%, 55%);
+  --primary-social: hsl(264, 64%, 52%);
+  --primary-self-care: hsl(43, 84%, 65%);
+
+  --neutral-bg: hsl(226, 43%, 10%);
+  --neutral-card-bg: hsl(235, 46%, 20%);
+  --neutral-text-1: hsl(235, 45%, 61%);
+  --neutral-text-2: hsl(236, 100%, 87%);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 2em;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  background-color: var(--neutral-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 1000px;
+}
+
+.avatar-image {
+  border: 3px solid white;
+  border-radius: 100%;
+  height: 70px;
+  width: 70px;
+}
+
+input {
+  display: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+label:hover {
+  color: var(--neutral-text-2);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2em;
+}
+
+.card,
+.top-card {
+  background-color: var(--neutral-card-bg);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.profile {
+  display: flex;
+  gap: 1.2em;
+  align-items: center;
+  margin-bottom: 1em;
+  background-color: var(--primary-blue);
+  padding: 2em;
+  border-radius: 10px;
+}
+
+.profile p {
+  margin: 0;
+  color: var(--neutral-text-2);
+  opacity: 0.8;
+}
+
+.profile .name {
+  color: white;
+  opacity: 1;
+  font-size: 1.4em;
+  margin-top: 0.2em;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em 1em 2em;
+  color: var(--neutral-text-1);
+  font-weight: 500;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "title ellipses"
+    "data data";
+  align-items: center;
+  padding: 2em;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: hsl(235, 46%, 30%);
+}
+
+.daily,
+.monthly,
+.weekly {
+  grid-area: data;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.4em;
+  transition: opacity 300ms ease;
+}
+
+.ellipse {
+  grid-area: ellipses;
+  justify-self: end;
+}
+
+.ellipse:hover path {
+  fill: white;
+}
+
+.card-title {
+  grid-area: title;
+  margin: 0;
+  color: white;
+}
+
+.current-data {
+  color: white;
+  font-size: 1.8em;
+  margin: 0;
+  font-weight: 300;
+}
+
+.previous-data {
+  color: var(--neutral-text-2);
+  margin: 0;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+input[type="radio"]:checked + label {
+  color: var(--neutral-text-2);
+}
+
+.invisible {
+  opacity: 0;
+}
+
+@media (min-width: 950px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2em;
+  }
+
+  .top-card {
+    grid-area: 1 / 1 / 3 / 2;
+  }
+
+  .daily,
+  .weekly,
+  .monthly {
+    display: block;
+    margin-top: 0;
+    align-self: start;
+  }
+
+  .current-data {
+    font-size: 3em;
+  }
+
+  .profile {
+    display: block;
+    padding: 2em 3em 3em 2em;
+  }
+
+  .profile-info {
+    margin: 2em 0;
+  }
+
+  .profile .name {
+    font-size: 2em;
+    font-weight: 300;
+  }
+
+  .options {
+    display: block;
+  }
+
+  label {
+    display: block;
+    margin: 1em 0;
+  }
+}
