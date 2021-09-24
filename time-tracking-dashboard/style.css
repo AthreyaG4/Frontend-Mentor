@@ -19,6 +19,7 @@
   box-sizing: border-box;
 }
 
+/* Setting defaults and making flex so the main stays in the center */
 body {
   padding: 2em;
   margin: 0;
@@ -53,6 +54,7 @@ label:hover {
   color: var(--neutral-text-2);
 }
 
+/* Grid layout for the cards. Switching this to pc mode in media query */
 .cards {
   display: grid;
   grid-template-columns: 1fr;
@@ -61,11 +63,17 @@ label:hover {
 
 .card,
 .top-card {
-  background-color: var(--neutral-card-bg);
   border-radius: 10px;
   width: 100%;
 }
 
+.top-card{
+  background-color: var(--neutral-card-bg);
+}
+
+/* Styles for profile in the top card */
+
+/* Display flex and switching to block in pc mode */
 .profile {
   display: flex;
   gap: 1.2em;
@@ -93,23 +101,70 @@ label:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 2em 1em 2em;
+  padding: 0.5em 2em 1.5em 2em;
   color: var(--neutral-text-1);
   font-weight: 500;
 }
 
-.card {
+/* styles for individual cards */
+
+.work{
+  background-color:var(--primary-work);
+  background-image:url("images/icon-work.svg");
+  background-repeat: no-repeat;
+  background-position: 95% -2px;
+}
+
+.study{
+  background-color:var(--primary-study);
+  background-image:url("images/icon-study.svg");
+  background-repeat: no-repeat;
+  background-position: 95% -2px;
+}
+
+.selfcare{
+  background-color:var(--primary-self-care);
+  background-image:url("images/icon-self-care.svg");
+  background-repeat: no-repeat;
+  background-position: 95% -2px;
+}
+
+.play{
+  background-color:var(--primary-play);
+  background-image:url("images/icon-play.svg");
+  background-repeat: no-repeat;
+  background-position: 95% -2px;
+}
+
+.exercise{
+  background-color:var(--primary-excercise);
+  background-image:url("images/icon-exercise.svg");
+  background-repeat: no-repeat;
+  background-position: 95% -2px;
+}
+
+.social{
+  background-color:var(--primary-social);
+  background-image:url("images/icon-social.svg");
+  background-repeat: no-repeat;
+  background-position: 95% -2px;
+}
+
+.card-content {
+  background-color: var(--neutral-card-bg);
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "title ellipses"
     "data data";
   align-items: center;
-  padding: 2em;
+  padding: 2em 2em;
   cursor: pointer;
+  margin-top:2.5em;
+  border-radius:20px 20px 7px 7px;
 }
 
-.card:hover {
+.card-content:hover {
   background: hsl(235, 46%, 30%);
 }
 
@@ -176,7 +231,7 @@ input[type="radio"]:checked + label {
   .weekly,
   .monthly {
     display: block;
-    margin-top: 0;
+    margin-top: 2em;
     align-self: start;
   }
 
@@ -205,5 +260,10 @@ input[type="radio"]:checked + label {
   label {
     display: block;
     margin: 1em 0;
+  }
+
+  .card-content {
+    margin-top:3.1em;
+    padding: 2em 2em;
   }
 }
