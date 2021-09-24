@@ -27,6 +27,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height:100vh;
 }
 
 main {
@@ -43,6 +44,7 @@ main {
     "card5";
   column-gap: 1em;
   row-gap: 1em;
+  max-width:80rem;
 }
 
 .card {
@@ -96,6 +98,7 @@ main {
 
 .testimonial {
   opacity: 0.7;
+  line-height: 18px;
 }
 
 .card1 {
@@ -122,6 +125,9 @@ main {
 }
 
 @media (min-width: 700px) {
+  html{
+    font-size:13px;
+  }
   main {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: max-content max-content max-content;
@@ -130,6 +136,10 @@ main {
       "card2 card3"
       "card4 card4"
       "card5 card5";
+  }
+
+  .person-description{
+    font-size:1.3em;
   }
 }
 
@@ -142,14 +152,22 @@ main {
       "card2 card4 card4"
       "card5 card5 card5";
   }
+
+  .person-description{
+    font-size:1.3em;
+  }
 }
 
 @media (min-width: 1200px) {
   main {
-    grid-template-columns: 1fr 1fr 1fr 0.9fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: max-content max-content;
     grid-template-areas:
       "card1 card1 card2 card5"
       "card3 card4 card4 card5";
+  }
+
+  .person-description{
+    font-size:1.3em;
   }
 }
