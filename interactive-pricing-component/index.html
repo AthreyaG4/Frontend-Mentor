@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive pricing component</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="content">
+    <header>
+      <h1 class="title">Simple, traffic-based pricing</h1>
+      <p class="introductory-para">Sign-up for our 30-day trial. No credit card required.</p>
+    </header>
+    <main>
+      <div class="pricing-box">
+        <p class="page-views"><span class="views">100k</span> Pageviews</p>
+        <input type="range" min="1" max="5" value="3" class="slider">
+        <p class="price-container"><span class="price">$16.00</span>/month</p>
+        <div class="toggle-container">
+          <div>Monthly Billing</div>
+          <div class="toggle">
+            <div class="ball">
+            </div>
+          </div>
+          <div class="discount">Yearly Billing</div>
+        </div>
+      </div>
+    
+      <div class="cta">
+        <ul class="points">
+          <li class="point">Unlimited websites</li>
+          <li class="point">100% data ownership</li>
+          <li class="point">Email reports</li>
+        </ul>
+        <button class="cta-btn">Start my trial</button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
