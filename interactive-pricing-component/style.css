@@ -323,6 +323,10 @@ header::after {
     content:'25% discount';
     width:max-content;
   }
+
+  .points{
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 374px) {
