@@ -1,3 +1,10 @@
+for (let e of document.querySelectorAll('.slider')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+  }
+
 const toggle_button = document.querySelector(".toggle");
 const ball = document.querySelector(".ball");
 
