@@ -13,8 +13,223 @@
 
 body{
     font-family: 'Commissioner', sans-serif;
+    background-color: rgba(247, 241, 241, 0.384);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height:100vh;
 }
 
 img{
     max-height:100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+input[type="checkbox"]{
+    display:none;
+}
+
+.hidden{
+    opacity:0;
+}
+
+.desktop{
+    display:none;
+}
+
+/* Header styles */
+
+header{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding:2em;
+    height:20em;
+    background-image:url("images/image-hero-mobile.jpg");
+    background-repeat:no-repeat;
+    background-position:top center;
+    background-size:cover;
+    width:100%;
+}
+
+.navbar{
+    transform:scale(1,0);
+    transform-origin: top;
+    transition: transform 200ms ease;
+    position:absolute;
+    top:25%;
+    bottom:0;
+    left:2em;
+    right:2em;
+    list-style: none;
+    z-index:3;
+}
+
+li:nth-child(1){
+    border-radius: 10px 10px 0 0;
+}
+
+li:nth-child(3){
+    border-radius: 0 0 10px 10px;
+}
+
+.navbar li{
+    background-color: white;
+    padding:1.5em 1em;
+    font-size:1.1em;
+    width:100%;
+    border-bottom:2px solid rgba(78, 78, 78, 0.068);
+}
+
+.navbar li a{
+    color:black;
+    font-weight: 600;
+}
+
+input[type="checkbox"]:checked~.navbar{
+    transform:scale(1,1);
+}
+
+/* Main styles */
+main{
+    margin-top:-5em;
+    z-index:2;
+    padding:1em;
+    max-width:40em;
+}
+
+.intro-card,.data-card,.selection-card{
+    padding:2em;
+    background-color:white;
+    border-radius: 10px;
+    margin-bottom:1em;
+}
+
+.intro-card, .data-card{
+    text-align:center;
+}
+
+/* intro card */
+.intro-card{
+    color:var(--neutral-dark-gray);
+    padding-top:4em;
+    position:relative;
+}
+
+.intro-card::before{
+    position: absolute;
+    content:url("images/logo-mastercraft.svg");
+    top:-30px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.intro-card h1{
+    font-size:1.2em;
+    color:black;
+    margin-bottom:1em;
+    padding:0 1em;
+}
+
+.intro-card .description{
+    font-size:0.9em;
+    margin-bottom:1em;
+}
+
+.button-box{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1em;
+}
+
+.bookmark-box{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+
+.bookmark-box img{
+    width:45px;
+    height:45px;
+}
+
+.bookmark-btn{
+    background-color:rgba(138, 133, 133, 0.116);
+    padding:0.85em 2em 0.85em 3em;
+    border-radius:30px;
+    margin-left:-2em;
+    color:black;
+    font-weight:600;
+    opacity:0.5;
+}
+
+.btn{
+    background-color:var(--primary-moderate-cyan);
+    color:white;
+    padding:1em 3em;
+    border-radius:3em;
+    font-size:0.8em;
+    border:none;
+    font-weight:600;
+    cursor: pointer;
+    transition:background-color 200ms ease-in;
+}
+
+.btn:hover,btn:focus{
+    background-color: var(--primary-dark-cyan);
+}
+
+/* data card */
+.bold-text{
+    font-weight:600;
+    font-size:2em;
+    display:block;
+    margin-bottom:0.2em;
+}
+
+.data-card .data{
+    margin-bottom:1em;
+}
+
+@media (min-width:700px) {
+    header{
+        justify-content: space-around;
+        background-image:url("images/image-hero-desktop.jpg");
+    }
+
+    .navbar{
+        display:flex;
+        transform:scale(1,1);
+        position:relative;
+        top:0;
+        gap:2em;
+        margin-right:2em;
+    }
+
+    .navbar li{
+        background:none;
+        width:max-content;
+        padding:0;
+    }
+
+    .navbar li a{
+        color:white;
+        font-weight:500;    
+        font-size:0.8em;
+    }
+
+    .mobile{
+        display:none;
+    }
+
+    .desktop{
+        display:block;
+    }
 }
