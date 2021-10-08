@@ -102,16 +102,18 @@ main {
   margin-top: -5em;
   z-index: 2;
   padding: 1em;
-  max-width: 40em;
+  max-width: 650px;
 }
 
 .intro-card,
 .data-card,
-.selection-card {
+.selection-card,
+.selection-modal{
   padding: 2em;
   background-color: white;
   border-radius: 10px;
   margin-bottom: 1em;
+  max-width: 600px;
 }
 
 .intro-card,
@@ -195,7 +197,7 @@ btn:focus {
 /* data card */
 #bold-text {
   font-weight: 600;
-  font-size: 2em;
+  font-size: 1.5em;
   display: block;
   margin-bottom: 0.2em;
   color: black;
@@ -238,24 +240,154 @@ btn:focus {
 }
 
 /* Selection card styles */
-.selection-card {
+.selection-card,.selection-modal{
   color: var(--neutral-dark-gray);
   line-height: 30px;
   font-size: 0.9em;
 }
 
-.selection-card .card-title,
-.selection-card .select-card-title {
-  margin-bottom: 1.5em;
+.selection-card .container{
+  display:block;
+}
+
+.card-title,.select-card-title{
   color: black;
   font-weight: 600;
 }
 
-.project-description {
-  margin-bottom: 1.5em;
+.select-card{
+  margin:1.5em 0;
+  border:2px solid rgb(233, 228, 228);
+  border-radius:10px;
+  padding:1.5em;
 }
 
-@media (min-width: 700px) {
+.select-card #bold-text{
+  display:inline;
+}
+
+.text-green{
+  color:var(--primary-moderate-cyan);
+  font-weight:600;
+}
+
+.select-card .number-left{
+  margin:1em 0;
+}
+
+.select-card .card-description{
+  margin:1em 0;
+}
+
+.selection-card .select-card input[type=radio]{
+  display:none;
+}
+
+/* selection modal */
+.selection-modal{
+  margin:1em;
+}
+
+.selection-modal .card-title{
+  margin-bottom:1em;
+}
+
+.selection-modal .select-card{
+  min-height:max-content;
+  transition:min-height 400ms ease-in;
+  display:grid;
+  grid-template-columns: 35px 1fr;
+  grid-template-rows:max-content max-content max-content max-content max-content;
+  align-items: center;
+  grid-template-areas:
+  "radio-btn label"
+  "radio-btn amount"
+  "description description"
+  "number number"
+  "pledge-box pledge-box";
+}
+
+.select-card input[type="radio"]{
+  grid-area:radio-btn;
+  width:20px;
+  height: 20px;
+  color:var(--primary-dark-cyan);
+}
+
+.select-card .select-card-title{
+  grid-area:label;
+  cursor:pointer;
+}
+
+.select-card .select-card-title:hover,
+.select-card .select-card-title:focus{
+  color:var(--primary-moderate-cyan);
+}
+
+
+.pledge-amount{
+  grid-area:amount;
+}
+
+.number-left{
+  grid-area:number;
+}
+
+.card-description{
+  grid-area:description;
+}
+
+.pledge-input-box{
+  display:grid;
+  grid-area:pledge-box;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "enter enter"
+  "input button";
+  place-items: center;
+  margin-top:1.5em;
+  position:relative;
+}
+
+.pledge-input-box::before{
+  position:absolute;
+  content:"";
+  height:2px;
+  background:rgb(233, 228, 228);
+  top:-1em;
+  left:0;
+  right:0;
+  margin:0 -1.5em;
+}
+
+.pledge-input-box label{
+  grid-area:enter;
+  margin-bottom:1.5em;
+}
+
+.pledge-input-box input{
+  grid-area:input;
+  height:50px;
+  width:70%;
+  border-radius:30px;
+  border:1px solid rgb(197, 192, 192);
+  padding:1em;
+  min-width:90px;
+  outline:none;
+}
+
+.pledge-input-box input:focus{
+  border:2px solid var(--primary-moderate-cyan);
+}
+
+.pledge-input-box button{
+  grid-area:button;
+  height:50px;
+}
+
+
+@media (min-width: 800px) {
   /* Header Styles */
   header {
     justify-content: space-around;
@@ -308,4 +440,51 @@ btn:focus {
     top: 50%;
     transform: translateY(-50%);
   }
+
+  /* selection-card */
+  .selection-card .number-left{
+    display:inline;
+  }
+
+  .selection-card .container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* selection modal */
+  .selection-modal .select-card{
+    grid-template-columns: 40px max-content 1fr 60px;
+    grid-template-rows: 50px 1fr 70px;
+    grid-template-areas: 
+    "radio-btn label amount number"
+    "description description description description"
+    "pledge-box pledge-box pledge-box pledge-box";
+  }
+
+  .number-left{
+    justify-self: self-end;
+  }
+  
+  .selection-modal .pledge-amount{
+    margin-left:10px;
+  }
+
+  .pledge-input-box{
+    grid-template-columns: 50% 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "enter input button";
+    place-items: center;
+  }
+
+  .pledge-input-box::before{
+    top:-1em;
+  }
+
+  .pledge-input-box label{
+    margin:0;
+    justify-self: self-start;
+  }
 }
+
