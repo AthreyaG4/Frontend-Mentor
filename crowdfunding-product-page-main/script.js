@@ -1,7 +1,7 @@
 const back_this_prj_btn = document.querySelector(".back-this-prj-btn");
 const select_btns = document.querySelectorAll(".select-btn");
 const radio_btns = document.querySelectorAll("input[type='radio']");
-const continue_btns = document.querySelectorAll(".continue-btn");
+const continue_btns = document.querySelectorAll(".continue-btn"); 
 
 const overlay = document.querySelector(".overlay");
 const selection_modal = document.querySelector(".selection-modal");
