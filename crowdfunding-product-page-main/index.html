@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Crowdfunding product page</title>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -68,7 +69,7 @@
         </p>
         <div class="container">
           <p class="number-left"><span id="bold-text">101 </span>left</p>
-          <button class="select-btn btn">Select Reward</button>
+          <a href="#bamboo" class="select-btn btn">Select Reward</a>
         </div>
       </div>
       <div class="select-card">
@@ -80,7 +81,7 @@
         </p>
         <div class="container">
           <p class="number-left"><span id="bold-text">64</span> left</p>
-          <button class="select-btn btn">Select Reward</button>
+          <a href="#black" class="select-btn btn">Select Reward</a>
         </div>
       </div>
       <div class="select-card">
@@ -92,13 +93,13 @@
         </p>
         <div class="container">
           <p class="number-left"><span id="bold-text">0</span> left</p>
-          <button class="select-btn btn">Out of Stock</button>
+          <a href="#mahogany" class="select-btn btn">Out of Stock</a>
         </div>
       </div>
     </div>
   </main>
 
-  <div class="selection-modal">
+  <div class="selection-modal hidden">
     <h3 class="card-title">Back this project</h3>
     <p>Want to support us in bringing Mastercraft Bamboo Monitor Riser out in the world?</p>
     <div class="select-card">
@@ -111,7 +112,7 @@
         <button class="continue-btn btn">Continue</button>
       </div>
     </div>
-    <div class="select-card">
+    <div class="select-card" id="bamboo">
       <input type="radio" name="selection-modal-option" id="selection-modal-bamboo-stand">
       <label for="selection-modal-bamboo-stand" class="select-card-title">Bamboo Stand</label>
       <p class="pledge-amount text-green">Pledge $25 or more</p>
@@ -123,7 +124,7 @@
         <button class="continue-btn btn">Continue</button>
       </div>
     </div>
-    <div class="select-card">
+    <div class="select-card" id="black">
       <input type="radio" name="selection-modal-option" id="selection-modal-black-edition">
       <label for="selection-modal-black-edition" class="select-card-title">Black Edition Stand</label>
       <p class="pledge-amount text-green">Pledge $75 or more</p>
@@ -136,7 +137,7 @@
       </div>
     </div>
 
-    <div class="select-card">
+    <div class="select-card" id="mahogany">
       <input type="radio" name="selection-modal-option" id="selection-modal-mahogany-edition">
       <label for="selection-modal-mahogany-edition" class="select-card-title">Mahogany Special Edition</label>
       <p class="pledge-amount text-green">Pledge $200 or more</p>
@@ -148,17 +149,17 @@
         <button class="continue-btn btn">Continue</button>
       </div>
     </div>
-
   </div>
 
-
-  <div class="success-modal">
+  <div class="success-modal hidden">
     <image class="check-icon" src="images/icon-check.svg" alt="check-icon"></image>
     <h3 class="success-modal-title">Thanks for your support!</h3>
     <p>Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
     an email once our campaign is completed.</p>
     <button class="finish-btn btn">Got it!</button>
   </div>
+
+  <div class="overlay hidden"></div>
 
 </body>
 </html>

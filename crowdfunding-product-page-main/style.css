@@ -13,6 +13,10 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Commissioner", sans-serif;
   background-color: rgba(247, 241, 241, 0.384);
@@ -37,6 +41,7 @@ input[type="checkbox"] {
 
 .hidden {
   opacity: 0;
+  pointer-events:none;
 }
 
 .desktop {
@@ -120,6 +125,7 @@ main {
   z-index: 2;
   padding: 1em;
   max-width: 650px;
+  position:relative;
 }
 
 .intro-card,
@@ -307,6 +313,18 @@ btn:focus {
 /* selection modal */
 .selection-modal{
   margin:1em;
+  position:fixed;
+  top:50%;
+  width:100%;
+  transform:translateY(-50%);
+  z-index:10;
+  transition: opacity 200ms ease-in;
+  height:80%;
+  overflow-y: scroll;
+}
+
+.selection-modal::-webkit-scrollbar{
+  display:none;
 }
 
 .selection-modal .card-title{
@@ -421,6 +439,12 @@ btn:focus {
   max-width: 450px;
   text-align:center;
   line-height:25px;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index:10;
+  transition: opacity 200ms ease-in;
 }
 
 .check-icon{
@@ -440,6 +464,17 @@ btn:focus {
 .success-modal .btn{
   width:max-content;
   padding:1em 2em;
+}
+
+.overlay{
+  background-color:rgba(0,0,0,0.5);
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:5;
+  transition: opacity 200ms ease-in;
 }
 
 @media (min-width: 800px) {
@@ -543,4 +578,3 @@ btn:focus {
     justify-self: self-start;
   }
 }
-
