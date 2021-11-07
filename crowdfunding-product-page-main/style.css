@@ -48,6 +48,11 @@ input[type="checkbox"] {
   display: none;
 }
 
+.disabled{
+  opacity:0.4;
+  pointer-events: none;
+}
+
 /* Header styles */
 
 header {
@@ -327,10 +332,6 @@ btn:focus {
   display:none;
 }
 
-.selection-modal .card-title{
-  margin-bottom:1em;
-}
-
 .selection-modal .select-card{
   min-height:max-content;
   transition:min-height 400ms ease-in;
@@ -345,6 +346,23 @@ btn:focus {
   "number number"
   "pledge-box pledge-box";
 }
+
+.selection-modal .head{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-bottom:0.5em;
+}
+
+.selection-modal .close-icon-modal{
+  cursor:pointer;
+}
+
+.selection-modal .close-icon-modal:hover path {
+  fill:#000;
+  opacity:0.6;
+}
+
 
 .select-card input[type="radio"]{
   grid-area:radio-btn;
@@ -402,7 +420,7 @@ btn:focus {
   top:-1em;
   left:0;
   right:0;
-  margin:0 -1.5em;
+  margin:-0.5em -1.5em;
 }
 
 .pledge-input-box label{
@@ -544,7 +562,7 @@ btn:focus {
 
   /* selection modal */
   .selection-modal .select-card{
-    grid-template-columns: 40px max-content 1fr 60px;
+    grid-template-columns: 40px max-content 1fr 100px;
     grid-template-rows: 50px 1fr max-content;
     grid-template-areas: 
     "radio-btn label amount number"
