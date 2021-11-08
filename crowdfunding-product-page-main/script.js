@@ -12,11 +12,19 @@ const main_select_cards = document.querySelectorAll("main .select-card");
 const selection_modal_select_cards = document.querySelectorAll(".selection-modal .select-card");
 
 const finish_btn = document.querySelector(".finish-btn");
+const bookmark_btn = document.querySelector(".bookmark-box");
+const bookmark_text = document.querySelector(".bookmark-btn")
 
 let number_left = [101,64,2];
 
 const main_number_left = document.querySelectorAll("main .number-left #bold-text");
 const selection_modal_number_left = document.querySelectorAll(".selection-modal .number-left #bold-text");
+
+const total_collection = document.querySelector(".total-collection #bold-text");
+const total_backers = document.querySelector(".total-backers #bold-text");
+
+console.log(total_collection);
+console.log(total_backers);
 
 main_number_left.forEach((ele,index) =>{
     ele.textContent = number_left[index];
@@ -74,15 +82,25 @@ finish_btn.addEventListener("click",()=>{
     success_modal.classList.add("hidden");
 });
 
+bookmark_btn.addEventListener("click",()=>{
+    bookmark_btn.classList.toggle("bookmarked");
+    if(bookmark_btn.classList.contains("bookmarked")){
+        bookmark_text.textContent = "Bookmarked";
+    }
+    else{
+        bookmark_text.textContent = "Bookmark";
+    }
+})
 
-//checks 
 setInterval(()=>{
     number_left.forEach((number,index) =>{
         if(number == 0){
             main_select_cards[index].classList.add("disabled");
+            selection_modal_select_cards[index+1].classList.add("disabled");
         }
         else{
             main_select_cards[index].classList.remove("disabled");
+            selection_modal_select_cards[index+1].classList.remove("disabled");
         }
     })
 },100);
