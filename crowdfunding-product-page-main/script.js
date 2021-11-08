@@ -19,11 +19,11 @@ const bookmark_text = document.querySelector(".bookmark-btn")
 
 let number_left = [101,64,2];
 
-const main_number_left = document.querySelectorAll("main .number-left #bold-text");
-const selection_modal_number_left = document.querySelectorAll(".selection-modal .number-left #bold-text");
+const main_number_left = document.querySelectorAll("main .number-left .bold-text");
+const selection_modal_number_left = document.querySelectorAll(".selection-modal .number-left .bold-text");
 
-const total_collection = document.querySelector(".total-collection #bold-text");
-const total_backers = document.querySelector(".total-backers #bold-text");
+const total_collection = document.querySelector(".total-collection .bold-text");
+const total_backers = document.querySelector(".total-backers .bold-text");
 
 //Interaction for hamburger and cross-icon in mobile menu
 hamburger.addEventListener("click", ()=>{

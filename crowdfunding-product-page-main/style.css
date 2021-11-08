@@ -265,7 +265,7 @@ main {
 }
 
 /* data card */
-#bold-text {
+.bold-text {
   font-weight: 600;
   font-size: 1.5em;
   display: block;
@@ -338,7 +338,7 @@ main {
   padding: 1.5em;
 }
 
-.select-card #bold-text {
+.select-card .bold-text {
   display: inline;
 }
 
