@@ -478,7 +478,7 @@ main {
   border: 1px solid rgb(197, 192, 192);
   font-weight: 600;
   font-size: 1em;
-  padding: 1em 1em 1em 2.5em;
+  padding: 1em 1em 1em 1.5em;
   min-width: 90px;
   outline: none;
 }
@@ -491,15 +491,6 @@ main {
   grid-area: button;
   height: 50px;
   position: relative;
-}
-
-.pledge-input-box button::before {
-  content: "$";
-  position: absolute;
-  left: -20em;
-  top: 1.5em;
-  color: var(--neutral-dark-gray);
-  font-size: 1.1em;
 }
 
 /* success modal */
