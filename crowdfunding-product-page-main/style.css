@@ -52,6 +52,23 @@ input[type="checkbox"] {
   display: none;
 }
 
+.invisible {
+  display: none;
+}
+
+.icon-hamburger,
+.icon-close {
+  cursor: pointer;
+}
+
+.icon-hamburger:hover,
+.icon-hamburger:focus,
+.icon-close:hover,
+.icon-close:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
 .disabled {
   opacity: 0.4;
   pointer-events: none;
@@ -397,13 +414,13 @@ main {
   color: var(--primary-dark-cyan);
 }
 
-.select-card .select-card-title {
+.selection-modal .select-card .select-card-title {
   grid-area: label;
   cursor: pointer;
 }
 
-.select-card .select-card-title:hover,
-.select-card .select-card-title:focus {
+.selection-modal .select-card .select-card-title:hover,
+.selection-modal .select-card .select-card-title:focus {
   color: var(--primary-moderate-cyan);
 }
 
@@ -459,7 +476,9 @@ main {
   width: 70%;
   border-radius: 30px;
   border: 1px solid rgb(197, 192, 192);
-  padding: 1em;
+  font-weight: 600;
+  font-size: 1em;
+  padding: 1em 1em 1em 2.5em;
   min-width: 90px;
   outline: none;
 }
@@ -471,6 +490,16 @@ main {
 .pledge-input-box button {
   grid-area: button;
   height: 50px;
+  position: relative;
+}
+
+.pledge-input-box button::before {
+  content: "$";
+  position: absolute;
+  left: -20em;
+  top: 1.5em;
+  color: var(--neutral-dark-gray);
+  font-size: 1.1em;
 }
 
 /* success modal */
@@ -480,6 +509,7 @@ main {
   border-radius: 10px;
   margin-bottom: 1em;
   max-width: 450px;
+  width: 90%;
   text-align: center;
   line-height: 25px;
   position: fixed;
@@ -535,6 +565,10 @@ main {
     gap: 2em;
     margin-right: 2em;
     cursor: pointer;
+  }
+
+  .pledge-input-box button::before {
+    left: -7em;
   }
 
   .navbar li {
