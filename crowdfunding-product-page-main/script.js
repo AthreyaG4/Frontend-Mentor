@@ -114,10 +114,12 @@ setInterval(()=>{
         if(number == 0){
             main_select_cards[index].classList.add("disabled");
             selection_modal_select_cards[index+1].classList.add("disabled");
+            select_btns[index].textContent = "Out of Stock";
         }
         else{
             main_select_cards[index].classList.remove("disabled");
             selection_modal_select_cards[index+1].classList.remove("disabled");
+            select_btns[index].textContent = "Select Reward";
         }
     })
 },100);
