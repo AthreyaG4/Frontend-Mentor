@@ -13,7 +13,11 @@
   box-sizing: border-box;
 }
 
-html{
+*:focus {
+  outline: none;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -41,16 +45,50 @@ input[type="checkbox"] {
 
 .hidden {
   opacity: 0;
-  pointer-events:none;
+  pointer-events: none;
 }
 
 .desktop {
   display: none;
 }
 
-.disabled{
-  opacity:0.4;
+.invisible {
+  display: none;
+}
+
+.icon-hamburger,
+.icon-close {
+  cursor: pointer;
+}
+
+.icon-hamburger:hover,
+.icon-hamburger:focus,
+.icon-close:hover,
+.icon-close:focus {
+  transform: scale(1.1);
+  outline: none;
+}
+
+.disabled {
+  opacity: 0.4;
   pointer-events: none;
+}
+
+.disabled a {
+  background-color: var(--neutral-dark-gray);
+}
+
+.bookmarked svg path {
+  fill: white;
+}
+
+.bookmarked svg circle {
+  fill: var(--primary-dark-cyan);
+}
+
+.bookmarked a {
+  color: var(--primary-dark-cyan);
+  opacity: 1;
 }
 
 /* Header styles */
@@ -96,28 +134,30 @@ li:nth-child(3) {
   font-size: 1.1em;
   width: 100%;
   border-bottom: 2px solid rgba(78, 78, 78, 0.068);
+  cursor: pointer;
 }
 
 .navbar li a {
   color: black;
   font-weight: 600;
-  position:relative;
+  position: relative;
 }
 
-.navbar li a::after{
-  content:'';
-  width:100%;
-  height:1px;
-  background-color:white;
-  position:absolute;
-  bottom:-2px;
-  left:0;
-  transform:scale(0,1);
-  transition:transform 200ms ease;
+.navbar li a::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transform: scale(0, 1);
+  transition: transform 200ms ease;
 }
 
-.navbar li a:hover::after{
-  transform:scale(1,1);
+.navbar li a:hover::after,
+.navbar li a:focus::after {
+  transform: scale(1, 1);
 }
 
 input[type="checkbox"]:checked ~ .navbar {
@@ -130,13 +170,13 @@ main {
   z-index: 2;
   padding: 1em;
   max-width: 650px;
-  position:relative;
+  position: relative;
 }
 
 .intro-card,
 .data-card,
 .selection-card,
-.selection-modal{
+.selection-modal {
   padding: 2em;
   background-color: white;
   border-radius: 10px;
@@ -190,19 +230,20 @@ main {
   cursor: pointer;
 }
 
-.bookmark-box img {
-  width: 45px;
-  height: 45px;
+.bookmark-box svg path,
+.bookmark-box svg circle {
+  transition: fill 400ms ease-in;
 }
 
 .bookmark-btn {
   background-color: rgba(138, 133, 133, 0.116);
-  padding: 0.85em 2em 0.85em 3em;
+  padding: 1em 2em 1em 3em;
   border-radius: 30px;
   margin-left: -2em;
   color: black;
   font-weight: 600;
   opacity: 0.5;
+  transition: color 400ms ease-in;
 }
 
 .btn {
@@ -218,12 +259,13 @@ main {
 }
 
 .btn:hover,
-btn:focus {
+.btn:focus {
   background-color: var(--primary-dark-cyan);
+  outline: none;
 }
 
 /* data card */
-#bold-text {
+.bold-text {
   font-weight: 600;
   font-size: 1.5em;
   display: block;
@@ -268,230 +310,234 @@ btn:focus {
 }
 
 /* Selection card styles */
-.selection-card,.selection-modal{
+.selection-card,
+.selection-modal {
   color: var(--neutral-dark-gray);
   line-height: 30px;
   font-size: 0.9em;
 }
 
-.selection-card .container{
-  display:block;
+.selection-card .container {
+  display: block;
 }
 
-.selection-card .card-title{
-  margin-bottom:1em;
+.selection-card .card-title {
+  margin-bottom: 1em;
 }
 
-.card-title,.select-card-title{
+.card-title,
+.select-card-title {
   color: black;
   font-weight: 600;
 }
 
-.select-card{
-  margin:1.5em 0;
-  border:2px solid rgb(233, 228, 228);
-  border-radius:10px;
-  padding:1.5em;
+.select-card {
+  margin: 1.5em 0;
+  border: 2px solid rgb(233, 228, 228);
+  border-radius: 10px;
+  padding: 1.5em;
 }
 
-.select-card #bold-text{
-  display:inline;
+.select-card .bold-text {
+  display: inline;
 }
 
-.text-green{
-  color:var(--primary-moderate-cyan);
-  font-weight:600;
+.text-green {
+  color: var(--primary-moderate-cyan);
+  font-weight: 600;
 }
 
-.select-card .number-left{
-  margin:1em 0;
+.select-card .number-left {
+  margin: 1em 0;
 }
 
-.select-card .card-description{
-  margin:1em 0;
+.select-card .card-description {
+  margin: 1em 0;
 }
 
-.selection-card .select-card input[type=radio]{
-  display:none;
+.selection-card .select-card input[type="radio"] {
+  display: none;
 }
 
 /* selection modal */
-.selection-modal{
-  margin:1em;
-  position:fixed;
-  top:50%;
-  width:100%;
-  transform:translateY(-50%);
-  z-index:10;
+.selection-modal {
+  margin: 1em;
+  position: fixed;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 10;
   transition: opacity 200ms ease-in;
-  height:80%;
+  height: 80%;
   overflow-y: scroll;
 }
 
-.selection-modal::-webkit-scrollbar{
-  display:none;
+.selection-modal::-webkit-scrollbar {
+  display: none;
 }
 
-.selection-modal .select-card{
-  min-height:max-content;
-  transition:min-height 400ms ease-in;
-  display:grid;
+.selection-modal .select-card {
+  min-height: max-content;
+  transition: min-height 400ms ease-in;
+  display: grid;
   grid-template-columns: 35px 1fr;
-  grid-template-rows:max-content max-content max-content max-content max-content;
+  grid-template-rows: max-content max-content max-content max-content max-content;
   align-items: center;
   grid-template-areas:
-  "radio-btn label"
-  "radio-btn amount"
-  "description description"
-  "number number"
-  "pledge-box pledge-box";
+    "radio-btn label"
+    "radio-btn amount"
+    "description description"
+    "number number"
+    "pledge-box pledge-box";
 }
 
-.selection-modal .head{
-  display:flex;
-  align-items:center;
+.selection-modal .head {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom:0.5em;
+  margin-bottom: 0.5em;
 }
 
-.selection-modal .close-icon-modal{
-  cursor:pointer;
+.selection-modal .close-icon-modal {
+  cursor: pointer;
 }
 
 .selection-modal .close-icon-modal:hover path {
-  fill:#000;
-  opacity:0.6;
+  fill: #000;
+  opacity: 0.6;
 }
 
-
-.select-card input[type="radio"]{
-  grid-area:radio-btn;
-  width:20px;
+.select-card input[type="radio"] {
+  grid-area: radio-btn;
+  width: 20px;
   height: 20px;
-  color:var(--primary-dark-cyan);
+  color: var(--primary-dark-cyan);
 }
 
-.select-card .select-card-title{
-  grid-area:label;
-  cursor:pointer;
+.selection-modal .select-card .select-card-title {
+  grid-area: label;
+  cursor: pointer;
 }
 
-.select-card .select-card-title:hover,
-.select-card .select-card-title:focus{
-  color:var(--primary-moderate-cyan);
+.selection-modal .select-card .select-card-title:hover,
+.selection-modal .select-card .select-card-title:focus {
+  color: var(--primary-moderate-cyan);
 }
 
-.select-card input[type="radio"]:checked ~ .pledge-input-box{
-  display:grid;
+.select-card input[type="radio"]:checked ~ .pledge-input-box {
+  display: grid;
 }
 
-
-.pledge-amount{
-  grid-area:amount;
+.pledge-amount {
+  grid-area: amount;
 }
 
-.number-left{
-  grid-area:number;
+.number-left {
+  grid-area: number;
 }
 
-.card-description{
-  grid-area:description;
+.card-description {
+  grid-area: description;
 }
 
-.pledge-input-box{
-  display:grid;
-  grid-area:pledge-box;
+.pledge-input-box {
+  display: grid;
+  grid-area: pledge-box;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: 
-  "enter enter"
-  "input button";
+  grid-template-areas:
+    "enter enter"
+    "input button";
   place-items: center;
-  margin-top:1.5em;
-  position:relative;
-  display:none;
+  margin-top: 1.5em;
+  position: relative;
+  display: none;
 }
 
-.pledge-input-box::before{
-  position:absolute;
-  content:"";
-  height:2px;
-  background:rgb(233, 228, 228);
-  top:-1em;
-  left:0;
-  right:0;
-  margin:-0.5em -1.5em;
+.pledge-input-box::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  background: rgb(233, 228, 228);
+  top: -1em;
+  left: 0;
+  right: 0;
+  margin: -0.5em -1.5em;
 }
 
-.pledge-input-box label{
-  grid-area:enter;
-  margin-bottom:1.5em;
+.pledge-input-box label {
+  grid-area: enter;
+  margin-bottom: 1.5em;
 }
 
-.pledge-input-box input{
-  grid-area:input;
-  height:50px;
-  width:70%;
-  border-radius:30px;
-  border:1px solid rgb(197, 192, 192);
-  padding:1em;
-  min-width:90px;
-  outline:none;
+.pledge-input-box input {
+  grid-area: input;
+  height: 50px;
+  width: 70%;
+  border-radius: 30px;
+  border: 1px solid rgb(197, 192, 192);
+  font-weight: 600;
+  font-size: 1em;
+  padding: 1em 1em 1em 1.5em;
+  min-width: 90px;
+  outline: none;
 }
 
-.pledge-input-box input:focus{
-  border:2px solid var(--primary-moderate-cyan);
+.pledge-input-box input:focus {
+  border: 2px solid var(--primary-moderate-cyan);
 }
 
-.pledge-input-box button{
-  grid-area:button;
-  height:50px;
+.pledge-input-box button {
+  grid-area: button;
+  height: 50px;
+  position: relative;
 }
 
 /* success modal */
-.success-modal{
+.success-modal {
   padding: 2em;
   background-color: white;
   border-radius: 10px;
   margin-bottom: 1em;
   max-width: 450px;
-  text-align:center;
-  line-height:25px;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  z-index:10;
+  width: 90%;
+  text-align: center;
+  line-height: 25px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
   transition: opacity 200ms ease-in;
 }
 
-.check-icon{
-  margin:2em 0 0.5em;
+.check-icon {
+  margin: 2em 0 0.5em;
 }
 
-.success-modal-title{
-  margin:1em 0;
-  font-size:1.5em;
+.success-modal-title {
+  margin: 1em 0;
+  font-size: 1.5em;
 }
 
-.success-modal p{
-  color:var(--neutral-dark-gray);
-  margin:1.5em 0;
+.success-modal p {
+  color: var(--neutral-dark-gray);
+  margin: 1.5em 0;
 }
 
-.success-modal .btn{
-  width:max-content;
-  padding:1em 2em;
+.success-modal .btn {
+  width: max-content;
+  padding: 1em 2em;
 }
 
-.overlay{
-  background-color:rgba(0,0,0,0.5);
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  z-index:5;
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
   transition: opacity 200ms ease-in;
 }
 
@@ -509,6 +555,11 @@ btn:focus {
     top: 0;
     gap: 2em;
     margin-right: 2em;
+    cursor: pointer;
+  }
+
+  .pledge-input-box button::before {
+    left: -7em;
   }
 
   .navbar li {
@@ -550,49 +601,56 @@ btn:focus {
   }
 
   /* selection-card */
-  .selection-card .number-left{
-    display:inline;
+  .selection-card .number-left {
+    display: inline;
   }
 
-  .selection-card .container{
-    display:flex;
+  .selection-card .container {
+    display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   /* selection modal */
-  .selection-modal .select-card{
+  .selection-modal .select-card {
     grid-template-columns: 40px max-content 1fr 100px;
     grid-template-rows: 50px 1fr max-content;
-    grid-template-areas: 
-    "radio-btn label amount number"
-    "description description description description"
-    "pledge-box pledge-box pledge-box pledge-box";
+    grid-template-areas:
+      "radio-btn label amount number"
+      "description description description description"
+      "pledge-box pledge-box pledge-box pledge-box";
   }
 
-  .number-left{
+  .number-left {
     justify-self: self-end;
   }
-  
-  .selection-modal .pledge-amount{
-    margin-left:10px;
+
+  .selection-modal .pledge-amount {
+    margin-left: 10px;
   }
 
-  .pledge-input-box{
+  .pledge-input-box {
     grid-template-columns: 50% 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: 
-    "enter input button";
+    grid-template-areas: "enter input button";
     place-items: center;
-    display:none;
+    display: none;
   }
 
-  .pledge-input-box::before{
-    top:-1em;
+  .pledge-input-box::before {
+    top: -1em;
   }
 
-  .pledge-input-box label{
-    margin:0;
+  .pledge-input-box label {
+    margin: 0;
     justify-self: self-start;
+  }
+
+  .bookmark-box {
+    width: 200px;
+  }
+
+  .bookmark-btn {
+    width: 170px;
   }
 }

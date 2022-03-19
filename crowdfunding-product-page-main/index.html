@@ -14,9 +14,12 @@
 </head>
 <body>
   <header>
-    <img src="images/logo.svg" alt="logo">
+    <a href="/"><img src="images/logo.svg" alt="logo"></a>
     <input type="checkbox" name="toggle" id="toggle">
-    <label for="toggle" class="mobile"><img src="images/icon-hamburger.svg" alt="hamburfer-icon"></label>
+    <label for="toggle" class="mobile">
+      <img src="images/icon-hamburger.svg" class="icon-hamburger" alt="hamburfer-icon">
+      <img src="images/icon-close-menu.svg" class="icon-close invisible" alt="x icon">
+    </label>
     <ul class="navbar">
       <li class="navbar-item"><a href="#">About</a></li>
       <li class="navbar-item"><a href="#">Discover</a></li>
@@ -31,16 +34,16 @@
       <div class="button-box">
       <button class="btn back-this-prj-btn">Back this project</button>
         <div class="bookmark-box">
-          <img src="images/icon-bookmark.svg" alt="bookmark-icon">
+          <svg width="56" height="56" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><circle fill="#2F2F2F" cx="28" cy="28" r="28"/><path fill="#B1B1B1" d="M23 19v18l5-5.058L33 37V19z"/></g></svg>
           <a href="#" class="bookmark-btn desktop">Bookmark</a>
         </div>
       </div>
     </div>
     <div class="data-card">
       <div class="datas">
-        <div class="total-collection data"><span id="bold-text">$89,914</span> of $100,000 backed</div>
-        <div class="total-backers data"><span id="bold-text">5,007</span> total backers</div>
-        <div class="days-left data"><span id="bold-text">56</span> days left</div>
+        <div class="total-collection data"><span class="bold-text">$89,914</span> of $100,000 backed</div>
+        <div class="total-backers data"><span class="bold-text">5,007</span> total backers</div>
+        <div class="days-left data"><span class="bold-text">56</span> days left</div>
       </div>
       <div class="progress-bar">
         <div class="progress"></div>
@@ -61,38 +64,38 @@
       </p>
     
       <div class="select-card">
-        <p class="select-card-title" for="bamboo-stand">Bamboo Stand</p>
+        <p class="select-card-title">Bamboo Stand</p>
         <p class="pledge-amount text-green">Pledge $25 or more</p>
         <p class="card-description">
           You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and
           you’ll be added to a special Backer member list.
         </p>
         <div class="container">
-          <p class="number-left"><span id="bold-text">101</span> left</p>
+          <p class="number-left"><span class="bold-text">101</span> left</p>
           <a href="#bamboo" class="select-btn btn">Select Reward</a>
         </div>
       </div>
       <div class="select-card">
-        <p class="select-card-title" for="black-edition">Black Edition Stand</p>
+        <p class="select-card-title">Black Edition Stand</p>
         <p class="pledge-amount text-green">Pledge $75 or more</p>
         <p class="card-description">
           You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer
           member list. Shipping is included.
         </p>
         <div class="container">
-          <p class="number-left"><span id="bold-text">64</span> left</p>
+          <p class="number-left"><span class="bold-text">64</span> left</p>
           <a href="#black" class="select-btn btn">Select Reward</a>
         </div>
       </div>
-      <div class="select-card disabled">
-        <label class="select-card-title" for="mahogany-edition">Mahogany Special Edition</label>
+      <div class="select-card">
+        <label class="select-card-title">Mahogany Special Edition</label>
         <p class="pledge-amount text-green">Pledge $200 or more</p>
         <p class="card-description">
           You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added
           to our Backer member list. Shipping is included.
         </p>
         <div class="container">
-          <p class="number-left"><span id="bold-text">0</span> left</p>
+          <p class="number-left"><span class="bold-text">0</span> left</p>
           <a href="#mahogany" class="select-btn btn">Out of Stock</a>
         </div>
       </div>
@@ -120,7 +123,7 @@
       <label for="selection-modal-bamboo-stand" class="select-card-title">Bamboo Stand</label>
       <p class="pledge-amount text-green">Pledge $25 or more</p>
       <p class="card-description">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
-      <p class="number-left"><span id="bold-text">1011</span> left</p>
+      <p class="number-left"><span class="bold-text">101</span> left</p>
       <div class="pledge-input-box">
         <label for="input2">Enter your pledge</label>
         <input type="text" id="input2" placeholder="$"></input>
@@ -132,7 +135,7 @@
       <label for="selection-modal-black-edition" class="select-card-title">Black Edition Stand</label>
       <p class="pledge-amount text-green">Pledge $75 or more</p>
       <p class="card-description">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
-      <p class="number-left"><span id="bold-text">64</span> left</p>
+      <p class="number-left"><span class="bold-text">64</span> left</p>
       <div class="pledge-input-box">
         <label for="input3">Enter your pledge</label>
         <input type="text" id="input3" placeholder="$"></input>
@@ -145,7 +148,7 @@
       <label for="selection-modal-mahogany-edition" class="select-card-title">Mahogany Special Edition</label>
       <p class="pledge-amount text-green">Pledge $200 or more</p>
       <p class="card-description">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
-      <p class="number-left"><span id="bold-text">0</span> left</p>
+      <p class="number-left"><span class="bold-text">0</span> left</p>
       <div class="pledge-input-box">
         <label for="input4">Enter your pledge</label>
         <input type="text" id="input4" placeholder="$"></input>
