@@ -1,0 +1,145 @@
+@use './variables' as *;
+@use './utilities' as *;
+@use './reset' as *;
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    background-color: $Neutral-vdark-blue;
+    padding:2em;
+    color:$Neutral-white;
+    font-family: 'Overpass', sans-serif;
+}
+
+main{
+    background-color: $Neutral-dark-blue;
+    padding:2em;
+    border-radius:20px;
+    max-width:350px;
+    background:linear-gradient($Neutral-dark-blue,hsl(216, 12%, 15%));
+
+    .star-container{
+        padding:0.8em;
+        background-color: $Neutral-dark-blue;
+        filter:brightness(120%);
+        width:fit-content;
+        border-radius: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom:1.4em;
+    }
+
+    .card-title{
+        font-size:1.5em;
+        font-weight:700;
+        margin:0.4em 0;
+    }
+
+    .card-description{
+        color:$Neutral-light-grey;
+        margin-bottom:1.5em;
+        font-size:0.9em;
+    }
+
+    .buttons{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:1.5em;
+
+        input{
+            display:none;
+        }
+
+        label{
+            border-radius:100%;
+            width:40px;
+            height:40px;
+            outline:none;
+            border:none;
+            color:$Neutral-light-grey;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            background-color: $Neutral-dark-blue;
+            filter:brightness(120%);
+
+            &:hover, &:focus{
+                background-color: $Primary-orange;
+                color:white;
+                outline:none;
+                filter:brightness(120%);
+            }
+
+            p{
+                margin-top:3px;
+            }
+        }
+
+        .selected{
+            filter:brightness(300%);
+        }
+    }
+
+    .submit-button{
+        width:100%;
+        border:none;
+        border-radius:20px;
+        padding:1em 2em;
+        text-transform: uppercase;
+        color:white;
+        background-color: $Primary-orange;
+        letter-spacing: 5px;
+        font-weight:700;
+        cursor: pointer;
+        transition:background-color 400ms ease, color 400ms ease;
+
+        &:hover,&:focus{
+            background-color:white;
+            color:$Primary-orange;
+            outline:none;
+        }
+    }
+}
+
+.thankyou-card{
+    background-color: $Neutral-dark-blue;
+    padding:2em;
+    border-radius:20px;
+    max-width:350px;
+    background:linear-gradient($Neutral-dark-blue,hsl(216, 12%, 15%));
+    text-align: center;
+    // display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    img{
+        margin-bottom:1.4em;
+    }
+
+    .rating-display{
+        color:$Primary-orange;
+        padding:0.5em 1.2em;
+        width:fit-content;
+        background-color: $Neutral-dark-blue;
+        filter:brightness(120%);
+        border-radius:20px;
+        font-size:0.9em;
+        margin-bottom:1.5em;
+    }
+
+    h2{
+        font-size:1.3em;
+        margin-bottom:0.7em;
+    }
+
+    p{
+        color:$Neutral-light-grey;
+        font-size:0.9em;
+    }
+}
