@@ -67,12 +67,13 @@ main{
             cursor: pointer;
             background-color: $Neutral-dark-blue;
             filter:brightness(120%);
+            transition:background-color 400ms ease,color 400ms ease,filter 400ms ease;
 
             &:hover, &:focus{
                 background-color: $Primary-orange;
                 color:white;
                 outline:none;
-                filter:brightness(120%);
+                filter:brightness(100%);
             }
 
             p{
@@ -81,7 +82,11 @@ main{
         }
 
         .selected{
-            filter:brightness(300%);
+            filter:brightness(250%);
+        }
+
+        .selected:hover{
+            filter:brightness(100%);
         }
     }
 

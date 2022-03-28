@@ -73,18 +73,22 @@ main .buttons label {
   cursor: pointer;
   background-color: #252d37;
   filter: brightness(120%);
+  transition: background-color 400ms ease, color 400ms ease, filter 400ms ease;
 }
 main .buttons label:hover, main .buttons label:focus {
   background-color: #fb7413;
   color: white;
   outline: none;
-  filter: brightness(120%);
+  filter: brightness(100%);
 }
 main .buttons label p {
   margin-top: 3px;
 }
 main .buttons .selected {
-  filter: brightness(300%);
+  filter: brightness(250%);
+}
+main .buttons .selected:hover {
+  filter: brightness(100%);
 }
 main .submit-button {
   width: 100%;

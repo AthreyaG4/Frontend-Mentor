@@ -4,14 +4,19 @@ const submitButton = document.querySelector(".submit-button");
 const rating = document.querySelector(".rating");
 const main = document.querySelector("main");
 const thankyou = document.querySelector(".thankyou-card");
+let done = false;
 
 submitButton.addEventListener("click",(e)=>{
     e.preventDefault();
     radios.forEach((radio,index) => {
         if(radio.checked){
             rating.textContent = index+1;
+            done = true;
         }
     });
+    if(!done){
+        return;
+    }
     main.classList.add("invisible");
     thankyou.style.display = "flex";
     thankyou.classList.remove("invisible");
